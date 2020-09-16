@@ -1,0 +1,6 @@
+Consider two scenarios here
+	1) If the index of upcoming element is greater than top of the stack, add it to the stack and proceed with recursion
+	2) If index is less than the top of stack, proceed with recursion for two scenarios
+		a. Pop the top of the stack until the top of the stack has a lesser index, add the index to the stack and proceed with recursion
+		b. Ignore the smaller index and proceed with recursion for subsequent indexes 
+Return the max value out of all scenarios.
