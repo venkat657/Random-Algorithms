@@ -1,0 +1,10 @@
+x=input().split()
+y=x[0]
+z=x[1]
+u1=y[len(y)-1]
+y=y.replace(y[len(y)-1],z[len(z)-1],len(y)-1)
+print(y)
+z=z.replace(z[len(z)-1],u1,len(z)-1)
+print(z)
+prod=int(y)*int(z)
+print(prod)
