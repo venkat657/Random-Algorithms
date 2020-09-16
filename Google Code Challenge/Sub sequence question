@@ -1,0 +1,14 @@
+Given the No.of Test cases T,
+the next T lines will consider the following inputs,
+N,M where N and M are sizes of the input arrays.
+Next line will consider N space separated distinct integers (Array A)
+and next line will contain M space separated not necessarily distinct integers(Array B).
+
+Solution is to find the minimum number of elements needed to be added in the array B so that it can contain a subsequence in the same order of array A.
+
+Test case for the google code challenge's 2nd problem 
+
+1   #T
+9 16 # N,M
+15 19 23 24 29 30 31 32 33 # A[N]
+2 19 19 12 17 29 21 23 24 32 11 12 13 14 15 16 # B[M]
