@@ -1,0 +1,31 @@
+class Solution:
+    def findword(self,board,pathmat,x,y,word,c):
+        if(board[x][y]!=word[c] or pathmat[x][y]!=0):
+            return False
+        if(c==len(word)-1):
+            return True
+        pathmat[x][y]=1
+        if(x!=len(board)-1 and self.findword(board,pathmat,x+1,y,word,c+1)):
+            return True
+        if(y!=len(board[0])-1 and self.findword(board,pathmat,x,y+1,word,c+1)):
+            return True
+            #pathmat[x][y+1]=0
+        if(x!=0 and board[x][y]==word[c] and self.findword(board,pathmat,x-1,y,word,c+1)):
+            return True
+            #pathmat[x-1][y]=0
+        if(y!=0 and self.findword(board,pathmat,x,y-1,word,c+1)):
+            return True
+        pathmat[x][y]=0
+        return False
+        
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        c=0
+        pathmat=[[0 for x in range(len(board[0]))] for y in range(len(board))]
+        for i in range(0,len(board)):
+            for j in range(0,len(board[0])):
+                if(board[i][j]==word[0]):
+                    val=self.findword(board,pathmat,i,j,word,c)
+                    if(val):
+                        return True
+        return False
+        
