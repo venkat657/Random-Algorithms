@@ -1,0 +1,22 @@
+class Solution:
+    def toString(self,a):
+        return ''.join(a)
+    def createpermutation(self,a,l,r,emptylist):
+        if(l==r):
+            emptylist+=[self.toString(a)]
+        else:
+            for i in range(l,r):
+                a[l],a[i]=a[i],a[l]
+                self.createpermutation(a,l+1,r,emptylist)
+                a[i],a[l]=a[l],a[i]
+        return emptylist
+    def getPermutation(self, n: int, k: int) -> str:
+        strig=''
+        for i in range(1,n+1):
+            strig+=str(i)
+        a=list(strig)
+        emptylist=[]
+        emptylist=self.createpermutation(a,0,n,emptylist)
+        emptylist.sort()
+        return emptylist[k-1]
+        
